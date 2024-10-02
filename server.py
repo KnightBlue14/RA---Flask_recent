@@ -32,8 +32,3 @@ scheduler.add_job(id='refresh', func=refresh, trigger='interval', seconds=1)
 
 if __name__ == '__main__':
     app.run()
-
-
-# if __name__ == '__main__':
-#     server = Server(app.wsgi_app)
-#     server.serve()
