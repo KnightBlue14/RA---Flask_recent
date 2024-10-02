@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="5; URL=http://localhost:5000">
+    <style>
+        h1 {text-align: center;}
+        h2 {text-align: center;}
+        h3 {text-align: center;}
+        h4 {text-align: center;}
+        h5 {text-align: center;}
+        .marginauto {margin: 10px auto 20px;display: block;}
+        p {text-align: center;}
+        div {text-align: center;}
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Image</title>
+</head>
+<body>
+    <h1>Recent game progress:</h1>
+    <img src="{{ image_url }}" alt="cover image" class="marginauto">
+    <h2>You are playing - "{{game_title}}"</h2>
+    <h4>You have unlocked -</h4>
+    <img src="{{ badge_url }}" alt="achievement image" class="marginauto">
+    <h4>"{{ach_title}}"</h4>
+    <h5>"{{ach_desc}}"</h5>
+</body>
+</html>
