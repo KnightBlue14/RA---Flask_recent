@@ -27,7 +27,7 @@ def home():
 scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.start()
-scheduler.add_job(id='refresh', func=refresh, trigger='interval', seconds=1)
+scheduler.add_job(id='refresh', func=refresh, trigger='interval', seconds=5)
 
 
 if __name__ == '__main__':

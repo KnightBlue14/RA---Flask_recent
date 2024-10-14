@@ -1,2 +1,2 @@
-key = '{web api key}'
-user = '{username}'
+key = '{key}'
+user = '{user}'

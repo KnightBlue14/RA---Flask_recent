@@ -8,7 +8,7 @@ import os
 user = ret_auth.user
 key = ret_auth.key
 
-url_recent = f'https://retroachievements.org/API/API_GetUserRecentAchievements.php?u={user}&y={key}&m=6000'
+url_recent = f'https://retroachievements.org/API/API_GetUserRecentAchievements.php?u={user}&y={key}'
 response = requests.post(url_recent)
 
 folder_name = 'static\\images'
@@ -46,10 +46,6 @@ else:
     ach.close()
     
 game_title = data[0]['GameTitle']
-
-# date_full = data[0]['Date']
-# day = date_full
-# day = datetime.strptime(day, "%Y-%m-%d %H:%M:%S")
 
 ach_title = data[0]['Title']
 ach_desc = data[0]['Description']
