@@ -33,8 +33,8 @@ else:
         f.write(response.content)
     data = response.json()
 
-game_cover = data[0]['GameIcon']
-cover_response = requests.get(f'https://i.retroachievements.org/{game_cover}', stream=True)
+game_url = data[0]['GameIcon']
+cover_response = requests.get(f'https://i.retroachievements.org/{game_url}', stream=True)
 cover = open(f'{folder_name}\\cover.png','wb')
 shutil.copyfileobj(cover_response.raw, cover)
 cover.close()
@@ -44,7 +44,7 @@ ach_response = requests.get(f'https://i.retroachievements.org/{ach_url}', stream
 ach = open(f'{folder_name}\\badge.png','wb')
 shutil.copyfileobj(ach_response.raw, ach)
 ach.close()
-    
+
 game_title = data[0]['GameTitle']
 ach_title = data[0]['Title']
 ach_desc = data[0]['Description']
