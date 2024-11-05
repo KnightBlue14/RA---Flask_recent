@@ -1,10 +1,8 @@
 from flask import Flask, render_template
-import tasks
-from livereload import Server
 import os
 from flask_apscheduler import APScheduler
 import ret_auth
-import requests
+import json
 
 app = Flask(__name__)
 
@@ -18,13 +16,14 @@ key = ret_auth.key
 def refresh():
     os.system('tasks.py')
 def ach_name():
-    url_recent = f'https://retroachievements.org/API/API_GetUserRecentAchievements.php?u={user}&y={key}'
-    response = requests.post(url_recent)
-    data = response.json()
-    game_title = data[0]['GameTitle']
-    ach_title = data[0]['Title']
-    ach_desc = data[0]['Description']
-    return [game_title,ach_title,ach_desc]
+    try:
+        data = json.load(open('cache.json'))
+        game_title = data[0]['GameTitle']
+        ach_title = data[0]['Title']
+        ach_desc = data[0]['Description']
+        return [game_title,ach_title,ach_desc]
+    except Exception:
+        return ['Cache file not found','Please make sure that you have unlocked an achievement within the last hour','and that your api key is valid']
 
 @app.route('/')
 def home():
