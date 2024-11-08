@@ -29,7 +29,7 @@ Used to collect the relevant images from the RetroAchievements server. As is, th
 ### cache.json
 This file is used as a long-term storage solution. By default, the API will only look back 1 hour for your most recent progress. Beyond that, a null result is returned. This file will store the most recent unlock while the server is running, allowing it to be displayed beyond that limit.
 
-IMPORTANT - Because of this 1 hour limit, when you run the server for the first time, it will not work, because there will be nothing for it to find. When you do this, make sure you have a recent unlock. RA does offer the ability to 'relock' achievements by deleting the m from your profile, so feel free to do that if it is easiest. Once you have a cache file saved, everything should work fine past the hour limit.
+IMPORTANT - Because of this 1 hour limit, when you run the server for the first time, it will not work, because there will be nothing for it to find. When you do this, make sure you have a recent unlock. RA does offer the ability to 'relock' achievements by deleting them from your profile, so feel free to do that if it is easiest. Once you have a cache file saved, everything should work fine past the hour limit.
 
 ### server.py
 The file used to orchestrate your server, as well as collect the game title and achievement data. Again, this file is functionally complete.
