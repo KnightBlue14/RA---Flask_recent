@@ -26,6 +26,8 @@ https://retroachievements.org/settings
 ### tasks.py
 Used to collect the relevant images from the RetroAchievements server. As is, this file is complete. You may wish to add additional functions using the RetroAchievements documentation, but it meets the needs of this project as is.
 
+I would suggest running this file once, with a recent achievement unlock (within the past hour), before running the server, for reasons outlined below
+
 ### cache.json
 This file is used as a long-term storage solution. By default, the API will only look back 1 hour for your most recent progress. Beyond that, a null result is returned. This file will store the most recent unlock while the server is running, allowing it to be displayed beyond that limit.
 
