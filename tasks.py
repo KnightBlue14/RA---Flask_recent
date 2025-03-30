@@ -13,7 +13,7 @@ response = requests.post(url_recent)
 folder_name = 'static\\images'
 
 try:
-    with open('cache.json') as d:
+    with open('./cache.json') as d:
         f = json.load(d)
 except FileNotFoundError:
     f = 'no cache found'
@@ -24,11 +24,11 @@ elif response.json() == f:
     data = f
 else:
     try:
-        os.remove('static\\images\\cover.png')
-        os.remove('static\\images\\badge.png')
+        os.remove('./static\\images\\cover.png')
+        os.remove('./static\\images\\badge.png')
     except FileNotFoundError:
         pass 
-    with open("cache.json", "wb") as f:
+    with open("./cache.json", "wb") as f:
         f.write(response.content)
     data = response.json()
 
