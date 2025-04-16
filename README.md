@@ -4,7 +4,7 @@ This is a browser utility tool for RetroAchievements, showing recent unlocks in 
 ## Description
 This project utilises one of multiple APIs from RetroAchievements, a community-based project for integrating achievements (such as those on Steam and Xbox, or Playstation trophies) into popular emulators, such as PCSX2, Dolphin and Duckstation. In order to use it, you will need to create a free account, as well as activate the integration in your emulator of choice. That done, the webserver will output to a port on your host machine's network, which can be accessed via any browser. It will update in near real-time, displaying the game you most recently played, and the achievement you most recently unlocked. In the example shown below, I had just finished the planet Umbris in Ratchet and Clank. 
 
-<img src="Example.jpg" width="200">
+<img src="[Example.jpg](https://github.com/KnightBlue14/RA---Flask_recent/blob/main/Example.png)" width="200">
 
 The integration does have a pop-up appear on-screen, but this was intended to serve as a more prominent version that can stay in place beyond the limits of the integration.
 
