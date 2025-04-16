@@ -10,7 +10,7 @@ The integration does have a pop-up appear on-screen, but this was intended to se
 
 ## Technologies used
 * Python - The server is based in Flask, and also uses additional files to validate your account, as well as update the image files stored.
-* HTML - This project makes some use of HTML to build the webpage, and updates every 10 seconds. This is enough for my purposes, but you can edit this, which will be outlined in the next section
+* HTML - This project makes some use of HTML to build the webpage, and updates every 15 seconds. This is enough for my purposes, but you can edit this, which will be outlined in the next section
 
 ## How to use
 The files are mostly complete, but there are some changes that can be made to suit your needs.
@@ -31,7 +31,7 @@ The file used to orchestrate your server, as well as collect the game title and 
 ### templates/index.html
 The template for the server webpage. This can be edited as you see fit to meet your preferences - the background colour, the size of text, the placement of text and images, can all be edited. Also, there is a variable on line 4 -
 ```
-meta http-equiv="refresh" content="10; URL=http://localhost:5000"
+meta http-equiv="refresh" content="15; URL=http://localhost:5000"
 ```
 The number before the URL controls how frequently the webpage reloads, In this case, it updates very 10 seconds. You can make this period shorter or longer, though be aware that RA does limit how frequently the API can be accessed
 
