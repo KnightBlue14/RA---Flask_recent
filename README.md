@@ -47,6 +47,12 @@ After some tinkering, I've managed to get this app running in a Docker container
 This is all you need in addition to the other files to spin up a container. It uses the 3.11-slim variant of the python image, making it much more lightweight than the default version. Of note is the networking component - by default, flask will run on port 5000 of the local machine's IP address. If you are not using docker, simply use a browser and open the address listed in the terminal when you start the server. 
 By contrast, if you use docker, you will need to specify in the app the address to use, as well as map the port of the container to one used by your machine.
 
+To do this, start by going into server.py to the very bottom of the page, to the command 'app.run()'. In the brackets, type the variable
+```
+host = '0.0.0.0'
+```
+I've found that you will not be able to access the webserver without this setting. This is all you need to do to make the app Docker ready.
+
 To build the container, simply use the command
 ```
 docker build -t raflask .
