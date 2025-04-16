@@ -3,10 +3,9 @@
 from flask import Flask, render_template
 import os
 from flask_apscheduler import APScheduler
-import ret_auth
 import json
 import requests
-import ret_auth
+from dotenv import load_dotenv
 import shutil
 
 app = Flask(__name__)
@@ -14,8 +13,10 @@ app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE'] = 0
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-key = 'Jcu6C3oyn4WdBEeYnD1bFXHiVqytKe2s'
-user = 'KnightBlue'
+load_dotenv()
+
+key = os.getenv('KEY')
+user = os.getenv('USER')
 
 
 def refresh():
@@ -30,7 +31,7 @@ def refresh():
     except FileNotFoundError:
         f = 'no cache found'
 
-    if len(response.json()) == 0 and len(f) == 1:
+    if len(response.json()) == 0:
         data = f
     elif response.json() == f:
         data = f
@@ -81,8 +82,8 @@ def home():
 scheduler = APScheduler()
 scheduler.init_app(app)
 scheduler.start()
-scheduler.add_job(id='refresh', func=refresh, trigger='interval', seconds=10)
+scheduler.add_job(id='refresh', func=refresh, trigger='interval', seconds=15)
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host = '0.0.0.0')
