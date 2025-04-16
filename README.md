@@ -51,7 +51,7 @@ To do this, start by going into server.py to the very bottom of the page, to the
 ```
 host = '0.0.0.0'
 ```
-I've found that you will not be able to access the webserver without this setting. This is all you need to do to make the app Docker ready.
+This will amke sure that the address within the container is appropriatley mapped to allow for access by your machine. This is all you need to do to make the app Docker ready.
 
 To build the container, simply use the command
 ```
